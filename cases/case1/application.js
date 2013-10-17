@@ -338,6 +338,7 @@
  
 				// Change the offset set data to re-position the
 				// 0,0 coordinate back up in the top left.
+				console.log('set left:'+imageData.left);
 				imageData.left =
 					((imageData.left - zoomLeft) * imageData.zoomFactor);
  
