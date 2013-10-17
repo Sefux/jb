@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Zoomooz</title>
+  
+  <link href="application.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+ 
+  <script type="text/javascript" src="jquery.zoomooz.js"></script>
+  <script type="text/javascript" src="application.js"></script>
+
+</head>
+<body>
+
+  <div id="viewport" class="zoomViewport">
+    <div id="container" class="zoomContainer">
+      <img id="image" src="../../media/layout_boa_width-50pc.jpg" width="920" />
+      <div class="label zoomTarget" id="label1"  data-targetsize="0.6" data-closeclick="true">
+          Carrer
+        </div>
+        <div class="label zoomTarget" id="label2" data-targetsize="0.8"  data-closeclick="true">
+          Nike
+        </div>
+        <div class="label zoomTarget" id="label3" data-targetsize="0.7"  data-closeclick="true">
+          Competion
+        </div>
+        <div class="label zoomTarget" id="label4" data-targetsize="0.7"  data-closeclick="true">
+          Milestones
+        </div>
+        
+    </div>
+
+  </div>
+  <div id="zoomer">
+  <div class="zoomButton" data-type="prev" data-root="#container"><</div>
+  <div class="zoomButton" data-type="next" data-root="#container">></div>
+  </div>
+</body>
+</html>

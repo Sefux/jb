@@ -1,0 +1,42 @@
+body {
+	background-color: #F9F9F9;
+	margin:0;
+	padding: 0;
+}	
+
+#view {
+	border: 1px solid #333333 ;
+	overflow: hidden ;
+	position: relative ;
+	width: 400px ;
+	}
+
+#image {
+	display: block ;
+	left: 0px ;
+	top: 0px ;
+	}
+
+#zoom {
+	background-image: url( "./white_fade.png" ) ;
+	border: 1px solid #000000 ;
+	cursor: pointer ;
+	display: none ;
+	height: 200px ;
+	position: absolute ;
+	width: 200px ;
+	z-index: 100 ;
+	}
+
+.hotspot {
+	-webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+	width: 50px;
+    height: 50px;
+    background: #ccc;
+    border: 3px solid #333;
+    top: 0;
+    left: 0;
+}
+

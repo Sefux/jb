@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1500" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>zoom d3</title>
+
+
+    <!-- Custom styles for this template -->
+    <link href="application.css" rel="stylesheet">
+
+  </head>
+
+  <body >
+
+   <button>Reset</button>
+
+     <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="d3.v3.js"></script>
+    <script>
+    var margin = {top: -5, right: -5, bottom: -5, left: -5},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var zoom = d3.behavior.zoom()
+    .center([width / 2, height / 2])
+    .scaleExtent([1, 5])
+    .on("zoom", zoomed);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.right + ")")
+    .call(zoom);
+
+var rect = svg.append("rect")
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", "white")
+    .style("pointer-events", "all");
+
+var container = svg.append("g");
+/*
+container.append("g")
+    .attr("class", "axis")
+  .selectAll("circle")
+    .data(d3.range(10, width, 10))
+  .enter().append("circle")
+    .attr("cx", width / 2)
+    .attr("cy", height / 2)
+    .attr("r", function(d) { return d; });
+*/
+var imgs = container.append("g")
+    .attr("class", "axis").selectAll("image").data([0]);
+            imgs.enter()
+            .append("svg:image")
+            .attr("xlink:href", "../../media/layout_boa_width-50pc.jpg")
+            .attr("x", "0")
+            .attr("y", "0")
+            .attr("width", "1500")
+            .attr("height", "1951");
+
+
+var center = svg.append("circle")
+    .style("fill", "red")
+    .attr("cx", width / 2)
+    .attr("cy", height / 2)
+    .attr("r", 10);
+
+function zoomed() {
+  container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+}
+
+
+    
+
+    </script>
+  </body>
+</html>

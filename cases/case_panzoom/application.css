@@ -1,0 +1,48 @@
+body {
+	background-color: #F9F9F9;
+	margin:0;
+	padding: 0;
+}	
+/*
+#view {
+	border: 1px solid #333333 ;
+	overflow: hidden ;
+	position: relative ;
+	width: 400px ;
+	}
+*/
+
+section { text-align: center; margin: 50px 0; }
+      .panzoom-parent { border: 2px solid #333; }
+      .panzoom-parent .panzoom { border: 2px dashed #666; }
+      .buttons { margin: 40px 0 0; }
+#image {
+	display: block ;
+	left: 0px ;
+	top: 0px ;
+	}
+
+#zoom {
+	background-image: url( "./white_fade.png" ) ;
+	border: 1px solid #000000 ;
+	cursor: pointer ;
+	display: none ;
+	height: 200px ;
+	position: absolute ;
+	width: 200px ;
+	z-index: 100 ;
+	}
+
+.hotspot {
+	-webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+	width: 60px;
+    height: 60px;
+    background: #c6c6c6;
+    border: 1px solid #999;
+    top: 0;
+    left: 0;
+    color:white;
+}
+

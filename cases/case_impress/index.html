@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1500" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Using impress.js</title>
+
+
+    <!-- Custom styles for this template -->
+    <link href="application.css" rel="stylesheet">
+
+  </head>
+
+  <body class="impress-not-supported">
+
+    <!--
+        For example this fallback message is only visible when there is `impress-not-supported` class on body.
+    -->
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+      <div id="background" class="step" data-x="0" data-y="0" data-scale="2">
+        <img id="image" src="../../media/layout_boa_w1500.jpg"  />  
+      </div>
+      <div id="career" class="step" data-x="-100" data-y="0" data-z="0" data-scale="2">
+        <q>Career</q>
+      </div>
+      <div id="partner" class="step" data-x="1300" data-y="500" data-scale="2">
+        <q>Partner</q>
+      </div>
+      
+    </div><!-- /impress -->
+    <div id="zoomer">
+  <div id="prev" class="zoomButton" ><</div>
+  <div id="next" class="zoomButton" >></div>
+  </div>
+
+     <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <script src="impress.js"></script>
+    <script>
+    var api = impress().init();
+    $('#zoomer #next').click(function(){ 
+      //alert('next');
+        impress().next();
+    });
+    $('#zoomer #prev').click(function(){ 
+        impress().prev();
+    });
+    
+
+    </script>
+  </body>
+</html>
