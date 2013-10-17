@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<title>PURE CSS3 / Jquery 1.91</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style>
+
+* {
+outline-color: transparent;
+outline-style: solid;
+outline-width: 0px;
+}
+
+body{
+  overflow:hidden;
+  padding:0;
+}
+
+.career {
+
+}
+
+#container {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+    -webkit-transition: transform 30s ease-out;
+    -moz-transition: transform 30s ease-out;
+    -ms-transition: transform 30s ease-out;
+    -o-transition: transform 30s ease-out;
+    transition: transform 30s ease-out;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+#container.zoom {
+
+}
+
+
+
+
+.hidden {
+display:none;
+}
+
+#career {
+  position:absolute;
+  top:200px;
+  left:250px;
+  background:red;
+  padding:20px;
+}
+
+#container.career{
+    -webkit-transform-origin: 30% 40%;
+    -moz-transform-origin: 30% 40%;
+    -ms-transform-origin: 30% 40%;
+    -o-transform-origin: 30% 40%;
+    transform-origin: 30% 40%;
+
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -o-transform: scale(2.5);
+    transform: scale(2.5);
+}
+
+#nike {
+  position:absolute;
+  top:200px;
+  right:250px;
+  background:red;
+  padding:20px;
+}
+#container.nike{
+    -webkit-transform-origin: 70% 70%;
+    -moz-transform-origin: 70% 70%;
+    -ms-transform-origin: 70% 70%;
+    -o-transform-origin: 70% 70%;
+    transform-origin: 70% 70%;
+
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -o-transform: scale(2.5);
+    transform: scale(2.5);
+}
+.hidden {
+  display:none;
+}
+
+</style>
+</head>
+<body>
+
+<div id="container">
+      <img id="image" class="nike" src="../../media/layout_boa_w1500.jpg" usemap="#main" />
+      <map name="main">
+        <area id="competition_area" shape="rect" href="#/competition" coords="1078,1051,1224,1090"/>
+        <area id="nike_area" shape="rect" href="#/nike" coords="1056,438,1132,473" onclick="zoomTo('nike')"/>
+        <area id="milestones_area" shape="rect" href="#/milestones" coords="292,1728,402,1758" />
+        <area id="career_area" shape="rect" href="#/career" coords="460,372,580,401"  onclick="zoomTo('career')"/>
+      </map>
+</div>
+<div id="career" class="popup hidden"><h1>CAREER!!!</h1></div>
+<div id="nike" class="popup hidden"><h1>NIKE!!!</h1></div>
+
+
+<script>
+// <div id="container" onclick="this.className = this.className ? '' : 'zoom';console.log('clicked')">
+
+function zoomTo(target) {
+
+//$('#container').removeClass("zoom career nike milestones competition");
+$('.popup').addClass('hidden'); 
+$('#'+target).toggleClass('hidden');
+$('#container').toggleClass(target).click();
+
+}
+
+
+
+$(function(){
+$('#container').bind('click',function(){
+//  $(this).removeClass('zoom');
+})
+
+//$('#career_area').click();
+//$('#container').click();
+})
+
+</script>
+
+</body>
+</html>
